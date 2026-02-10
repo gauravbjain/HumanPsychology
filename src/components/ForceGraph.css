@@ -1,0 +1,69 @@
+.force-graph {
+  position: relative;
+  overflow: hidden;
+}
+
+.force-graph__svg {
+  display: block;
+  background: var(--surface);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  cursor: grab;
+  touch-action: none;
+}
+
+.force-graph__svg--dragging {
+  cursor: grabbing;
+}
+
+.force-graph__label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Tooltip */
+.force-graph__tooltip {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  z-index: 10;
+  max-width: 260px;
+}
+
+.force-graph__tooltip-name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--text-strong);
+  line-height: 1.3;
+  margin-bottom: 0.15rem;
+}
+
+.force-graph__tooltip-person {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.force-graph__tooltip-summary {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+}
+
+.force-graph__tooltip-link {
+  font-size: 0.82rem;
+  color: var(--accent);
+  cursor: pointer;
+  pointer-events: all;
+}
+.force-graph__tooltip-link:hover {
+  text-decoration: underline;
+}

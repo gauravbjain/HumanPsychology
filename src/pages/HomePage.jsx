@@ -73,6 +73,20 @@ export function HomePage() {
             >
               Apply to Your Life
             </button>
+            <button
+              type="button"
+              className="app-nav__btn"
+              onClick={() => navigate('/map')}
+            >
+              Mind Map
+            </button>
+            <button
+              type="button"
+              className="app-nav__btn"
+              onClick={() => navigate('/compare')}
+            >
+              Compare
+            </button>
           </nav>
         </div>
       </header>
