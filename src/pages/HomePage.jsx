@@ -48,9 +48,9 @@ export function HomePage() {
             <button
               type="button"
               className="app-nav__btn"
-              onClick={() => navigate('/map')}
+              onClick={() => navigate('/timeline')}
             >
-              World map
+              Timeline
             </button>
             <button
               type="button"

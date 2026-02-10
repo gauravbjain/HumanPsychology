@@ -526,3 +526,35 @@ export function getInfluencedByTheories(theory) {
     .map((id) => getTheory(id))
     .filter(Boolean);
 }
+
+/** Parse era string to a numeric year for timeline sorting. Ancient/traditional/classical → early. */
+export function getTheorySortYear(theory) {
+  const era = theory?.era || '';
+  const match = era.match(/^(\d{3,4})/);
+  if (match) return Number(match[1]);
+  if (/\b(Ancient|Classical|Traditional)\b/i.test(era)) return -500;
+  if (/^\d{4}s–present/.test(era)) return Number(era.slice(0, 4));
+  return 0;
+}
+
+/** Theories sorted by timeline (earliest first), with period label for grouping. */
+export function getTheoriesForTimeline() {
+  const withYear = THEORIES.map((t) => ({
+    theory: t,
+    sortYear: getTheorySortYear(t),
+    period: getPeriodLabel(getTheorySortYear(t)),
+  }));
+  withYear.sort((a, b) => a.sortYear - b.sortYear);
+  return withYear;
+}
+
+function getPeriodLabel(year) {
+  if (year < 0) return 'Ancient & classical';
+  if (year < 1800) return 'Before 1800';
+  if (year < 1850) return '1800–1850';
+  if (year < 1900) return '1850–1900';
+  if (year < 1920) return '1900–1920';
+  if (year < 1950) return '1920–1950';
+  if (year < 1980) return '1950–1980';
+  return '1980–present';
+}
