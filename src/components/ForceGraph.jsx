@@ -44,6 +44,7 @@ export function buildEdges(theories) {
 export function ForceGraph({ theories, width, height, selectedId, onSelect }) {
   const navigate = useNavigate();
   const svgRef = useRef(null);
+  const isMobile = width < 600;
 
   // Zoom / pan state
   const [zoom, setZoom] = useState(1);
@@ -246,7 +247,8 @@ export function ForceGraph({ theories, width, height, selectedId, onSelect }) {
             const isSelected = selectedId === pos.id;
             const isConnected = selectedId && connectedIds.has(pos.id);
             const isDimmed = selectedId && !isSelected && !isConnected;
-            const r = isSelected ? 22 : 16;
+            const baseR = isMobile ? 20 : 16;
+            const r = isSelected ? baseR + 6 : baseR;
 
             return (
               <g

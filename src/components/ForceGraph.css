@@ -67,3 +67,18 @@
 .force-graph__tooltip-link:hover {
   text-decoration: underline;
 }
+
+/* Mobile: hide hover tooltip, enlarge touch targets */
+@media (max-width: 768px) {
+  .force-graph__tooltip {
+    display: none;
+  }
+
+  .force-graph__label {
+    font-size: 9px;
+  }
+
+  .force-graph__svg {
+    border-radius: 8px;
+  }
+}
