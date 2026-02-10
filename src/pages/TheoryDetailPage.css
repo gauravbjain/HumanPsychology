@@ -301,6 +301,45 @@
   line-height: 1.3;
 }
 
+.detail-page__lineage-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.detail-page__lineage-list li {
+  margin-bottom: 0.5rem;
+}
+
+.detail-page__related-card--inline {
+  display: inline-flex;
+  flex-direction: row;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.detail-page__related-card--contradicts {
+  border-color: var(--theme-accent-muted);
+}
+
+.detail-page__scenarios-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.detail-page__scenarios-list li {
+  margin-bottom: 0.6rem;
+}
+
+.detail-page__tools-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.detail-page__tools-list li {
+  margin-bottom: 0.6rem;
+}
+
 /* Missing state */
 .detail-page--missing {
   padding: 3rem 1.5rem;

@@ -1,0 +1,164 @@
+.experiments-page__header .app-header__inner {
+  padding-bottom: 1rem;
+}
+
+.experiments-page__back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.experiments-page__back:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.experiments-page__main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.experiments-page__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.experiments-page__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.experiments-page__card-head {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.experiments-page__card-head:hover {
+  background: var(--bg);
+}
+
+.experiments-page__card-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.15rem;
+  flex: 1 1 auto;
+}
+
+.experiments-page__card-subtitle {
+  width: 100%;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.experiments-page__card-toggle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.experiments-page__card-body {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.experiments-page__card-body[hidden] {
+  display: none;
+}
+
+.experiments-page__description {
+  margin: 1rem 0 0;
+  color: var(--text);
+}
+
+.experiments-page__steps-wrap {
+  margin-top: 1rem;
+}
+
+.experiments-page__steps-title {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.experiments-page__steps {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.experiments-page__steps li {
+  margin-bottom: 0.35rem;
+}
+
+.experiments-page__takeaway {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.95rem;
+}
+
+.experiments-page__takeaway strong {
+  font-weight: 600;
+}
+
+.experiments-page__links {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.experiments-page__links-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.experiments-page__links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experiments-page__link {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.experiments-page__link:hover {
+  text-decoration: underline;
+  color: var(--accent-strong);
+}

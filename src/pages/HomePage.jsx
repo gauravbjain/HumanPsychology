@@ -1,19 +1,21 @@
 import { useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { THEORIES, REGIONS, getTheoriesByRegion } from '../data/theories';
+import { THEORIES, REGIONS, SCHOOLS, getTheoriesByRegion, getTheoriesBySchool } from '../data/theories';
 import { TheoryCard } from '../components/TheoryCard';
 import { ConnectionsView } from '../components/ConnectionsView';
 import '../App.css';
 
 export function HomePage() {
   const [regionFilter, setRegionFilter] = useState('');
+  const [schoolFilter, setSchoolFilter] = useState('');
   const [view, setView] = useState('sections');
   const navigate = useNavigate();
 
-  const filtered = useMemo(
-    () => getTheoriesByRegion(regionFilter),
-    [regionFilter]
-  );
+  const filtered = useMemo(() => {
+    let list = regionFilter ? getTheoriesByRegion(regionFilter) : THEORIES;
+    if (schoolFilter) list = list.filter((t) => t.school === schoolFilter);
+    return list;
+  }, [regionFilter, schoolFilter]);
 
   return (
     <div className="app">
@@ -50,6 +52,20 @@ export function HomePage() {
             >
               World map
             </button>
+            <button
+              type="button"
+              className="app-nav__btn"
+              onClick={() => navigate('/experiments')}
+            >
+              Try experiments
+            </button>
+            <button
+              type="button"
+              className="app-nav__btn"
+              onClick={() => navigate('/tools')}
+            >
+              Practical tools
+            </button>
           </nav>
         </div>
       </header>
@@ -75,10 +91,27 @@ export function HomePage() {
                   ))}
                 </select>
               </div>
+              <div className="app-filters__group">
+                <label className="app-filters__label">Filter by school of thought</label>
+                <select
+                  className="app-filters__select"
+                  value={schoolFilter}
+                  onChange={(e) => setSchoolFilter(e.target.value)}
+                >
+                  <option value="">All schools ({THEORIES.length})</option>
+                  {SCHOOLS.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.label} ({getTheoriesBySchool(s.id).length})
+                    </option>
+                  ))}
+                </select>
+              </div>
               <p className="app-filters__hint">
-                {regionFilter
-                  ? REGIONS.find((r) => r.id === regionFilter)?.description
-                  : 'Western, Eastern, African, Latin American, and Indigenous perspectives.'}
+                {schoolFilter
+                  ? SCHOOLS.find((s) => s.id === schoolFilter)?.description
+                  : regionFilter
+                    ? REGIONS.find((r) => r.id === regionFilter)?.description
+                    : 'Psychoanalysis, behaviorism, cognitive, humanistic, evolutionary, and more.'}
               </p>
               <button
                 type="button"

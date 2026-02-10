@@ -29,6 +29,9 @@ export const THEORY_IMAGES = {
   fanon: `${PICSUM_BASE}/fanon1/400/250`,
   'liberation-psych': `${PICSUM_BASE}/liberation1/400/250`,
   'indigenous-holistic': `${PICSUM_BASE}/indigenous1/400/250`,
+  festinger: `${PICSUM_BASE}/festinger1/400/250`,
+  bowlby: `${PICSUM_BASE}/bowlby1/400/250`,
+  'evolutionary-psych': `${PICSUM_BASE}/evolution1/400/250`,
 };
 
 export const THEORY_BOOKS = {
@@ -113,6 +116,16 @@ export const THEORY_BOOKS = {
   ],
   'indigenous-holistic': [
     { title: 'Decolonizing Trauma Work', author: 'Renee Linklater', amazonUrl: 'https://www.amazon.com/s?k=Decolonizing+Trauma+Work+Indigenous' },
+  ],
+  festinger: [
+    { title: 'A Theory of Cognitive Dissonance', author: 'Leon Festinger', amazonUrl: 'https://www.amazon.com/s?k=Theory+of+Cognitive+Dissonance+Festinger' },
+  ],
+  bowlby: [
+    { title: 'Attachment', author: 'John Bowlby', amazonUrl: 'https://www.amazon.com/s?k=Attachment+Bowlby' },
+    { title: 'The Strange Situation', author: 'Mary Ainsworth', amazonUrl: 'https://www.amazon.com/s?k=Strange+Situation+Ainsworth' },
+  ],
+  'evolutionary-psych': [
+    { title: 'The Evolution of Desire', author: 'David Buss', amazonUrl: 'https://www.amazon.com/s?k=Evolution+of+Desire+Buss' },
   ],
 };
 

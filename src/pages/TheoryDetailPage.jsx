@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getTheory, getRelatedTheories, REGIONS } from '../data/theories';
+import { getTheory, getRelatedTheories, getContradictingTheories, getInfluencedByTheories, REGIONS } from '../data/theories';
 import { getImageForTheory, getBooksForTheory } from '../data/imagesAndBooks';
 import { getElaboration } from '../data/elaborations';
 import { getThemeForRegion } from '../data/themes';
@@ -16,6 +16,8 @@ export function TheoryDetailPage() {
   const showHeroImage = imageUrl && !heroImgError;
   const books = theory ? getBooksForTheory(theory.id) : [];
   const related = theory ? getRelatedTheories(theory) : [];
+  const contradicting = theory ? getContradictingTheories(theory) : [];
+  const influencedBy = theory ? getInfluencedByTheories(theory) : [];
   const regionLabel = theory ? REGIONS.find((r) => r.id === theory.region)?.label : '';
 
   if (!theory) {
@@ -111,6 +113,62 @@ export function TheoryDetailPage() {
           <section className="detail-page__section">
             <h2 className="detail-page__section-title">In practice</h2>
             <p className="detail-page__prose">{elaboration.inPractice}</p>
+          </section>
+        )}
+
+        {influencedBy.length > 0 && (
+          <section className="detail-page__section">
+            <h2 className="detail-page__section-title">Intellectual lineage</h2>
+            <p className="detail-page__related-intro">This idea builds on:</p>
+            <ul className="detail-page__lineage-list">
+              {influencedBy.map((t) => (
+                <li key={t.id}>
+                  <Link to={`/idea/${t.id}`} className="detail-page__related-card detail-page__related-card--inline">
+                    {t.person}: {t.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {contradicting.length > 0 && (
+          <section className="detail-page__section">
+            <h2 className="detail-page__section-title">Contrasting ideas</h2>
+            <p className="detail-page__related-intro">Theories that disagree or offer a different lens:</p>
+            <div className="detail-page__related-grid">
+              {contradicting.map((r) => (
+                <Link key={r.id} to={`/idea/${r.id}`} className="detail-page__related-card detail-page__related-card--contradicts">
+                  {getImageForTheory(r.id) && (
+                    <img src={getImageForTheory(r.id)} alt="" className="detail-page__related-img" />
+                  )}
+                  <span className="detail-page__related-person">{r.person}</span>
+                  <span className="detail-page__related-name">{r.name}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {elaboration?.realWorldScenarios?.length > 0 && (
+          <section className="detail-page__section detail-page__section--highlight">
+            <h2 className="detail-page__section-title">Real-world scenarios</h2>
+            <ul className="detail-page__scenarios-list">
+              {elaboration.realWorldScenarios.map((scenario, i) => (
+                <li key={i}>{scenario}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {elaboration?.practicalTools?.length > 0 && (
+          <section className="detail-page__section">
+            <h2 className="detail-page__section-title">Practical tools you can use</h2>
+            <ul className="detail-page__tools-list">
+              {elaboration.practicalTools.map((tool, i) => (
+                <li key={i}>{tool}</li>
+              ))}
+            </ul>
           </section>
         )}
 

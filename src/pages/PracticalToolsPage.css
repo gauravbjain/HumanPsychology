@@ -1,0 +1,147 @@
+.practical-tools-page__header .app-header__inner {
+  padding-bottom: 1rem;
+}
+
+.practical-tools-page__back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.practical-tools-page__back:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.practical-tools-page__main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.practical-tools-page__section {
+  margin-bottom: 2.5rem;
+}
+
+.practical-tools-page__section-title {
+  font-size: 1.35rem;
+  margin: 0 0 0.5rem;
+  color: var(--text-strong);
+}
+
+.practical-tools-page__section-intro {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.practical-tools-page__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.practical-tools-page__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.practical-tools-page__card-head {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.practical-tools-page__card-head:hover {
+  background: var(--bg);
+}
+
+.practical-tools-page__card-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.1rem;
+  flex: 1 1 auto;
+}
+
+.practical-tools-page__card-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.practical-tools-page__card-toggle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.practical-tools-page__card-body {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.practical-tools-page__card-body[hidden] {
+  display: none;
+}
+
+.practical-tools-page__when {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.practical-tools-page__steps {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.practical-tools-page__steps li {
+  margin-bottom: 0.35rem;
+}
+
+.practical-tools-page__links {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.practical-tools-page__link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.practical-tools-page__link:hover {
+  text-decoration: underline;
+  color: var(--accent-strong);
+}
+
+.practical-tools-page__tools-list {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.practical-tools-page__tools-list li {
+  margin-bottom: 0.5rem;
+}
+
+.practical-tools-page__tools-list + .practical-tools-page__link {
+  display: inline-block;
+  margin-top: 0.75rem;
+}

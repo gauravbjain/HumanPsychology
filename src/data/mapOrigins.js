@@ -26,6 +26,9 @@ export const MAP_ORIGINS = {
   fanon: { coordinates: [-61.07, 14.61], place: 'Martinique' },
   'liberation-psych': { coordinates: [-89.19, 13.69], place: 'El Salvador' },
   'indigenous-holistic': { coordinates: [-106.35, 56.13], place: 'North America' },
+  festinger: { coordinates: [-73.99, 40.71], place: 'New York, USA' },
+  bowlby: { coordinates: [-0.13, 51.51], place: 'London, UK' },
+  'evolutionary-psych': { coordinates: [-97.74, 30.27], place: 'Texas, USA' },
 };
 
 export function getMapOrigin(theoryId) {

@@ -218,6 +218,60 @@ export const ELABORATIONS = {
     whyItMatters: 'Indigenous holistic views expand what “mental health” can mean and who is involved in healing. They challenge the separation of individual from community and of mind from land and spirit, and support culturally grounded and decolonizing practice.',
     inPractice: 'Indigenous healing practices, cultural safety training, and community-led programs draw on these perspectives. They are used in health services, trauma work, and policy that aims to respect Indigenous sovereignty and knowledge.',
   },
+  festinger: {
+    longDescription: [
+      'Leon Festinger proposed that when we hold two or more cognitions (beliefs, attitudes, behaviors) that are psychologically inconsistent, we experience cognitive dissonance—an aversive state that motivates us to reduce it. We might change a belief, add a new justification, or avoid information that increases the conflict.',
+      'In a famous experiment, participants did a boring task and were paid either $1 or $20 to tell the next person it was interesting. Those paid $1 later rated the task as more enjoyable: they had insufficient external justification, so they changed their attitude to align with their behavior. Those paid $20 had enough justification and did not need to change.',
+      'Cognitive dissonance helps explain why people double down after bad decisions, why initiation rituals increase loyalty, and how we rationalize moral compromises. It is a cornerstone of social psychology and persuasion research.',
+    ],
+    whyItMatters: 'Understanding dissonance makes our own rationalizations visible. We can ask: "Am I changing my belief because of evidence, or to reduce discomfort?" It also explains why others cling to positions after costly commitments.',
+    inPractice: 'Used in health behavior change (e.g., getting people to commit publicly), marketing, and conflict resolution. Awareness of dissonance can reduce self-deception and support more honest decision-making.',
+    realWorldScenarios: [
+      'You buy an expensive phone. You then read mixed reviews. You find yourself focusing on the positive reviews and downplaying the negatives—dissonance reduction.',
+      'After choosing between two good job offers, you start to notice more flaws in the job you rejected and more virtues in the one you took.',
+      'Someone who went through a difficult initiation to join a group values the group more than someone who got in easily—effort justification.',
+    ],
+    practicalTools: [
+      'Before a big decision, write down the pros and cons. Re-read them after you decide to notice if you\'re downplaying the road not taken.',
+      'When you catch yourself justifying something you did, ask: "Would I accept this reasoning from a friend?"',
+    ],
+  },
+  bowlby: {
+    longDescription: [
+      'John Bowlby, drawing on ethology and psychoanalysis, argued that infants are biologically predisposed to form a strong emotional bond with a primary caregiver. This attachment serves as a secure base from which to explore the world and a safe haven in times of stress. Mary Ainsworth\'s "Strange Situation" identified attachment styles: secure, anxious-ambivalent, avoidant, and later disorganized.',
+      'Internal working models—mental representations of self, others, and relationships—formed in early attachment influence how we relate to others and regulate emotions across the life span. Secure attachment is associated with better emotion regulation, relationship quality, and resilience; insecure patterns can contribute to anxiety, avoidance, or difficulty trusting.',
+      'Attachment theory has shaped child welfare, therapy (e.g., attachment-based and emotionally focused therapy), and our understanding of how early relationships affect adult mental health.',
+    ],
+    whyItMatters: 'Attachment helps explain why we react the way we do in relationships—pursuing or avoiding closeness, fearing abandonment, or struggling to depend on others. It normalizes the need for connection and offers a lens for healing.',
+    inPractice: 'Therapists use attachment-informed approaches to help clients understand their patterns and build security. In parenting, responsive caregiving and a secure base support healthy attachment.',
+    realWorldScenarios: [
+      'After a long day, you seek out your partner for a hug before tackling the next task—using them as a secure base.',
+      'Someone with an anxious attachment style might need frequent reassurance and worry when their partner is distant.',
+      'A person with avoidant attachment may feel uncomfortable with intimacy and prioritize independence, often due to early experiences with unavailable caregivers.',
+    ],
+    practicalTools: [
+      'Reflect on how you typically respond when stressed in relationships: Do you seek closeness, pull away, or get angry? Naming the pattern is the first step.',
+      'If you\'re a parent or caregiver: try to be consistently responsive to a child\'s bids for connection—this builds a secure base.',
+    ],
+  },
+  'evolutionary-psych': {
+    longDescription: [
+      'Evolutionary psychology applies the principles of natural selection to the mind. It proposes that many psychological mechanisms are adaptations—solutions to recurring problems in the environment in which our ancestors evolved. These might include choosing mates, detecting cheaters, forming alliances, and responding to threats.',
+      'Research has explored jealousy (often different concerns for men vs. women), mate preferences, parental investment, cooperation and reciprocity, and the roots of aggression and status. Critics raise concerns about genetic determinism, the difficulty of testing evolutionary hypotheses, and the risk of justifying harmful norms.',
+      'When used carefully, evolutionary psychology offers a complementary perspective: not "biology is destiny" but "our minds were shaped by ancestral challenges, and that can help explain some universal tendencies—while culture and choice still matter enormously."',
+    ],
+    whyItMatters: 'It provides a lens for why certain behaviors and emotions are widespread across cultures—without implying they are unchangeable. It can also highlight mismatches between our evolved tendencies and modern environments (e.g., stress, diet, social comparison).',
+    inPractice: 'Used in understanding relationships, health behavior, and mental health (e.g., anxiety as an evolved alarm system). It informs some approaches to depression (e.g., social rank, attachment) and to well-being (e.g., belonging, meaning).',
+    realWorldScenarios: [
+      'You feel a pang of jealousy when your partner talks warmly to someone else—evolutionary theorists might link this to concerns about paternity or commitment.',
+      'People often help others who have helped them (reciprocity) and punish those who don\'t (altruistic punishment)—possible evolved mechanisms for cooperation.',
+      'Fear of public speaking or of being judged can be understood as an overactive "audience" mechanism that evolved when our reputation in a small group was vital.',
+    ],
+    practicalTools: [
+      'When you notice a strong emotional reaction (e.g., jealousy, envy), consider both the evolutionary "why" and what you want to do with it—understanding doesn\'t mean obeying.',
+      'Use the "mismatch" idea: if a habit (e.g., doom-scrolling, isolation) doesn\'t serve you, it may be a modern trap that our brains aren\'t well adapted for; you can design environments to compensate.',
+    ],
+  },
 };
 
 export function getElaboration(theoryId) {

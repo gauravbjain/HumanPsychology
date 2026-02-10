@@ -1,4 +1,5 @@
 // Psychology theories: prominent ideas + figures, global scope. relatedIds link to other theory ids.
+// school = major school of thought for filtering; influencedBy = intellectual lineage; contradictsIds = contrasting ideas.
 
 export const REGIONS = [
   { id: 'western', label: 'Western', description: 'European & North American traditions' },
@@ -8,6 +9,19 @@ export const REGIONS = [
   { id: 'indigenous', label: 'Indigenous', description: 'First peoples & holistic worldviews' },
 ];
 
+export const SCHOOLS = [
+  { id: 'psychoanalysis', label: 'Psychoanalysis', description: 'Unconscious, drives, and early experience' },
+  { id: 'behaviorism', label: 'Behaviorism', description: 'Observable behavior and learning' },
+  { id: 'cognitive', label: 'Cognitive', description: 'Thought, beliefs, and information processing' },
+  { id: 'humanistic', label: 'Humanistic', description: 'Growth, meaning, and self-actualization' },
+  { id: 'evolutionary', label: 'Evolutionary', description: 'Adaptation and evolved mind' },
+  { id: 'social', label: 'Social', description: 'Groups, influence, and situation' },
+  { id: 'eastern', label: 'Eastern traditions', description: 'Mindfulness, virtue, and interdependence' },
+  { id: 'african', label: 'African thought', description: 'Ubuntu and decolonizing the mind' },
+  { id: 'latin', label: 'Latin American', description: 'Liberation and community' },
+  { id: 'indigenous', label: 'Indigenous', description: 'Holistic and place-based well-being' },
+];
+
 export const THEORIES = [
   // —— Western: Psychoanalysis ——
   {
@@ -15,6 +29,7 @@ export const THEORIES = [
     name: 'Psychoanalysis & the Unconscious',
     person: 'Sigmund Freud',
     region: 'western',
+    school: 'psychoanalysis',
     era: '1856–1939',
     shortSummary: 'Mental life is driven by unconscious wishes and conflicts; early experience shapes personality.',
     keyPoints: [
@@ -25,13 +40,16 @@ export const THEORIES = [
       'Free association and dream analysis can reveal unconscious content.',
     ],
     relatedIds: ['jung', 'adler', 'rogers', 'beck'],
+    contradictsIds: ['watson', 'skinner'],
   },
   {
     id: 'jung',
     name: 'Collective Unconscious & Archetypes',
     person: 'Carl Jung',
     region: 'western',
+    school: 'psychoanalysis',
     era: '1875–1961',
+    influencedBy: ['freud'],
     shortSummary: 'Beyond the personal unconscious, we share a collective unconscious filled with universal archetypes.',
     keyPoints: [
       'Collective unconscious: shared, inherited layer of the psyche across humanity.',
@@ -47,7 +65,10 @@ export const THEORIES = [
     name: 'Individual Psychology',
     person: 'Alfred Adler',
     region: 'western',
+    school: 'psychoanalysis',
     era: '1870–1937',
+    influencedBy: ['freud'],
+    contradictsIds: ['freud'],
     shortSummary: 'Striving for superiority and social interest, not sex or aggression, drive human behavior.',
     keyPoints: [
       'Inferiority feelings are universal; we compensate by striving for significance.',
@@ -64,6 +85,7 @@ export const THEORIES = [
     name: 'Classical Conditioning',
     person: 'Ivan Pavlov',
     region: 'western',
+    school: 'behaviorism',
     era: '1849–1936',
     shortSummary: 'Neutral stimuli can become triggers for reflexes when paired with natural stimuli.',
     keyPoints: [
@@ -79,7 +101,10 @@ export const THEORIES = [
     name: 'Behaviorism',
     person: 'John B. Watson',
     region: 'western',
+    school: 'behaviorism',
     era: '1878–1958',
+    influencedBy: ['pavlov'],
+    contradictsIds: ['freud'],
     shortSummary: 'Psychology should study observable behavior; environment shapes people.',
     keyPoints: [
       '“Give me a dozen healthy infants…” — behavior can be shaped by control of environment.',
@@ -94,7 +119,10 @@ export const THEORIES = [
     name: 'Operant Conditioning',
     person: 'B.F. Skinner',
     region: 'western',
+    school: 'behaviorism',
     era: '1904–1990',
+    influencedBy: ['pavlov', 'watson'],
+    contradictsIds: ['freud', 'rogers'],
     shortSummary: 'Behavior is selected by its consequences: reinforcement and punishment shape what we do.',
     keyPoints: [
       'Reinforcement (positive or negative) increases behavior; punishment decreases it.',
@@ -110,7 +138,9 @@ export const THEORIES = [
     name: 'Hierarchy of Needs & Self-Actualization',
     person: 'Abraham Maslow',
     region: 'western',
+    school: 'humanistic',
     era: '1908–1970',
+    influencedBy: ['adler'],
     shortSummary: 'Humans are motivated by a hierarchy of needs; growth toward self-actualization is the peak.',
     keyPoints: [
       'Needs hierarchy: physiological → safety → love/belonging → esteem → self-actualization.',
@@ -125,7 +155,10 @@ export const THEORIES = [
     name: 'Person-Centered Therapy',
     person: 'Carl Rogers',
     region: 'western',
+    school: 'humanistic',
     era: '1902–1987',
+    influencedBy: ['adler', 'maslow'],
+    contradictsIds: ['skinner'],
     shortSummary: 'People have an innate tendency to grow; empathy and unconditional positive regard enable it.',
     keyPoints: [
       'Actualizing tendency: organism moves toward growth when conditions allow.',
@@ -141,6 +174,7 @@ export const THEORIES = [
     name: 'Stages of Cognitive Development',
     person: 'Jean Piaget',
     region: 'western',
+    school: 'cognitive',
     era: '1896–1980',
     shortSummary: 'Children construct knowledge through stages; thinking changes qualitatively with age.',
     keyPoints: [
@@ -156,7 +190,9 @@ export const THEORIES = [
     name: 'Sociocultural Theory',
     person: 'Lev Vygotsky',
     region: 'western',
+    school: 'cognitive',
     era: '1896–1934',
+    influencedBy: ['piaget'],
     shortSummary: 'Thinking is shaped by culture and language; learning happens in the zone of proximal development.',
     keyPoints: [
       'Higher mental functions are internalized from social interaction and tools (especially language).',
@@ -171,7 +207,9 @@ export const THEORIES = [
     name: 'Cognitive Therapy & Automatic Thoughts',
     person: 'Aaron T. Beck',
     region: 'western',
+    school: 'cognitive',
     era: '1921–2021',
+    influencedBy: ['freud', 'piaget'],
     shortSummary: 'Depression and anxiety are maintained by distorted automatic thoughts and core beliefs.',
     keyPoints: [
       'Automatic thoughts flow from core beliefs and intermediate assumptions.',
@@ -186,7 +224,9 @@ export const THEORIES = [
     name: 'Rational Emotive Behavior Therapy (REBT)',
     person: 'Albert Ellis',
     region: 'western',
+    school: 'cognitive',
     era: '1913–2007',
+    influencedBy: ['adler'],
     shortSummary: 'Emotional distress comes from irrational beliefs; disputing them leads to healthier emotions.',
     keyPoints: [
       'ABC model: Activating event → Beliefs → emotional/behavioral Consequences.',
@@ -202,7 +242,9 @@ export const THEORIES = [
     name: 'Social Learning & Self-Efficacy',
     person: 'Albert Bandura',
     region: 'western',
+    school: 'social',
     era: '1925–2021',
+    influencedBy: ['skinner'],
     shortSummary: 'We learn by observing others; beliefs about our capability (self-efficacy) shape what we do.',
     keyPoints: [
       'Observational learning: attention, retention, reproduction, motivation.',
@@ -217,6 +259,7 @@ export const THEORIES = [
     name: 'Obedience to Authority',
     person: 'Stanley Milgram',
     region: 'western',
+    school: 'social',
     era: '1933–1984',
     shortSummary: 'Under authority, ordinary people can inflict harm; situation often overrides personal morals.',
     keyPoints: [
@@ -232,6 +275,7 @@ export const THEORIES = [
     name: 'Stanford Prison Experiment & Situation',
     person: 'Philip Zimbardo',
     region: 'western',
+    school: 'social',
     era: '1933–',
     shortSummary: 'Assigned roles (guard/prisoner) and situation can override personality and produce abuse.',
     keyPoints: [
@@ -247,7 +291,9 @@ export const THEORIES = [
     name: 'Learned Helplessness & Positive Psychology',
     person: 'Martin Seligman',
     region: 'western',
+    school: 'social',
     era: '1942–',
+    influencedBy: ['skinner', 'beck'],
     shortSummary: 'When we learn we cannot control outcomes, we give up; positive psychology studies flourishing.',
     keyPoints: [
       'Learned helplessness: repeated uncontrollable aversive events lead to passivity and depression.',
@@ -263,6 +309,7 @@ export const THEORIES = [
     name: 'Buddhist Psychology & Mindfulness',
     person: 'Buddhist tradition (e.g. Buddha, Nāgārjuna)',
     region: 'eastern',
+    school: 'eastern',
     era: 'Ancient–present',
     shortSummary: 'Suffering arises from craving and ignorance; mindfulness and insight free the mind.',
     keyPoints: [
@@ -278,6 +325,7 @@ export const THEORIES = [
     name: 'Yoga Psychology (Patañjali)',
     person: 'Patañjali (Yoga Sūtras)',
     region: 'eastern',
+    school: 'eastern',
     era: 'Classical India',
     shortSummary: 'The mind’s fluctuations cause suffering; yoga stills the mind and reveals the true self.',
     keyPoints: [
@@ -293,6 +341,7 @@ export const THEORIES = [
     name: 'Confucian Psychology: Ren & Li',
     person: 'Confucius & Confucian tradition',
     region: 'eastern',
+    school: 'eastern',
     era: 'Ancient China–present',
     shortSummary: 'Virtue (ren) and ritual (li) in relationship create a harmonious self and society.',
     keyPoints: [
@@ -309,6 +358,7 @@ export const THEORIES = [
     name: 'Ubuntu: “I am because we are”',
     person: 'African philosophical tradition (e.g. Tutu, Mbiti)',
     region: 'african',
+    school: 'african',
     era: 'Traditional–present',
     shortSummary: 'Personhood is realized in community; humanity is interconnected.',
     keyPoints: [
@@ -324,6 +374,7 @@ export const THEORIES = [
     name: 'Colonial Psychology & Decolonizing the Mind',
     person: 'Frantz Fanon',
     region: 'african',
+    school: 'african',
     era: '1925–1961',
     shortSummary: 'Colonialism distorts identity and mental health; liberation requires political and psychological decolonization.',
     keyPoints: [
@@ -340,7 +391,9 @@ export const THEORIES = [
     name: 'Liberation Psychology',
     person: 'Ignacio Martín-Baró',
     region: 'latin',
+    school: 'latin',
     era: '1942–1989',
+    influencedBy: ['fanon', 'vygotsky'],
     shortSummary: 'Psychology should serve the oppressed; social reality and collective action are central.',
     keyPoints: [
       'De-ideologization: uncover how dominant ideas hide oppression.',
@@ -356,6 +409,7 @@ export const THEORIES = [
     name: 'Indigenous Holistic Well-Being',
     person: 'Indigenous traditions (diverse peoples)',
     region: 'indigenous',
+    school: 'indigenous',
     era: 'Traditional–present',
     shortSummary: 'Health is balance of mind, body, spirit, and land; community and place are part of the person.',
     keyPoints: [
@@ -366,12 +420,13 @@ export const THEORIES = [
     ],
     relatedIds: ['ubuntu', 'eastern-mindfulness', 'confucian'],
   },
-  // One more for social (Asch)
+  // —— Western: Social (Asch) ——
   {
     id: 'asch',
     name: 'Conformity & Group Pressure',
     person: 'Solomon Asch',
     region: 'western',
+    school: 'social',
     era: '1907–1996',
     shortSummary: 'People often conform to the group even when the group is clearly wrong.',
     keyPoints: [
@@ -381,6 +436,59 @@ export const THEORIES = [
       'One dissenter can greatly reduce conformity.',
     ],
     relatedIds: ['milgram', 'zimbardo'],
+  },
+  // —— Cognitive: key concepts ——
+  {
+    id: 'festinger',
+    name: 'Cognitive Dissonance',
+    person: 'Leon Festinger',
+    region: 'western',
+    school: 'cognitive',
+    era: '1919–1989',
+    shortSummary: 'Holding conflicting beliefs or acting against our attitudes creates discomfort; we reduce it by changing our thoughts or behavior.',
+    keyPoints: [
+      'Cognitive dissonance: tension when beliefs, attitudes, or behaviors conflict.',
+      'We are motivated to reduce dissonance (change a belief, add a justification, or avoid the conflict).',
+      'Classic studies: insufficient justification (small reward → greater attitude change), effort justification.',
+      'Applied to decision-making, persuasion, and understanding why people double down after poor choices.',
+    ],
+    relatedIds: ['ellis', 'beck', 'bandura'],
+    influencedBy: ['piaget'],
+  },
+  {
+    id: 'bowlby',
+    name: 'Attachment Theory',
+    person: 'John Bowlby',
+    region: 'western',
+    school: 'cognitive',
+    era: '1907–1990',
+    shortSummary: 'Early bonds with caregivers shape our expectations of relationships and our ability to regulate emotions throughout life.',
+    keyPoints: [
+      'Attachment: enduring emotional bond with a caregiver; secure base for exploration.',
+      'Secure, anxious, avoidant, and disorganized attachment styles (with Mary Ainsworth).',
+      'Internal working models: mental representations of self, others, and relationships.',
+      'Early attachment influences adult relationships, stress response, and mental health.',
+    ],
+    relatedIds: ['freud', 'rogers', 'seligman', 'ubuntu'],
+    influencedBy: ['freud'],
+  },
+  // —— Evolutionary ——
+  {
+    id: 'evolutionary-psych',
+    name: 'Evolutionary Psychology',
+    person: 'David Buss and others',
+    region: 'western',
+    school: 'evolutionary',
+    era: '1980s–present',
+    shortSummary: 'Mind and behavior are shaped by natural selection; we have evolved psychological adaptations for survival and reproduction.',
+    keyPoints: [
+      'Psychological mechanisms are adaptations that solved recurring problems in ancestral environments.',
+      'Topics: mate choice, jealousy, cooperation, aggression, parenting, status, and morality.',
+      'Environment of evolutionary adaptedness (EEA) vs. modern mismatch.',
+      'Controversies: genetic determinism, testability, and political implications.',
+    ],
+    relatedIds: ['freud', 'bowlby', 'bandura', 'seligman'],
+    contradictsIds: ['watson'],
   },
 ];
 
@@ -393,9 +501,28 @@ export function getTheoriesByRegion(regionId) {
   return THEORIES.filter((t) => t.region === regionId);
 }
 
+export function getTheoriesBySchool(schoolId) {
+  if (!schoolId) return THEORIES;
+  return THEORIES.filter((t) => t.school === schoolId);
+}
+
 export function getRelatedTheories(theory) {
   if (!theory?.relatedIds?.length) return [];
   return theory.relatedIds
+    .map((id) => getTheory(id))
+    .filter(Boolean);
+}
+
+export function getContradictingTheories(theory) {
+  if (!theory?.contradictsIds?.length) return [];
+  return theory.contradictsIds
+    .map((id) => getTheory(id))
+    .filter(Boolean);
+}
+
+export function getInfluencedByTheories(theory) {
+  if (!theory?.influencedBy?.length) return [];
+  return theory.influencedBy
     .map((id) => getTheory(id))
     .filter(Boolean);
 }
