@@ -1,0 +1,147 @@
+.connections-view {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.connections-view__header {
+  margin-bottom: 2rem;
+}
+
+.connections-view__back {
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: none;
+  border: none;
+  padding: 0.25rem 0;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.connections-view__back:hover {
+  color: var(--accent-strong);
+}
+
+.connections-view__title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: var(--text-strong);
+}
+
+.connections-view__subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0 0 1rem 0;
+}
+
+.connections-view__center-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.connections-view__center-select {
+  font-size: 0.95rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  min-width: 220px;
+}
+
+.connections-view__layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 1.5fr) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .connections-view__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .connections-view__layout .connections-view__center {
+    order: -1;
+  }
+}
+
+.connections-view__layout > section h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem 0;
+}
+
+.connections-view__node-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.connections-view__node {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.connections-view__node-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.connections-view__node-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.connections-view__node:hover {
+  border-color: var(--accent-muted);
+  background: var(--bg);
+}
+
+.connections-view__node-person {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.connections-view__node-name {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.connections-view__empty {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.connections-view__center .theory-card {
+  margin-top: 0;
+}

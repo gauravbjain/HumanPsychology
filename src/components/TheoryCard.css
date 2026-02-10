@@ -1,0 +1,290 @@
+.theory-card {
+  --card-radius: 12px;
+  --card-padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.theory-card__image-wrap {
+  aspect-ratio: 16 / 10;
+  background: var(--bg);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.theory-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.theory-card__image--placeholder {
+  object-fit: contain;
+  background: var(--bg);
+  padding: 1rem;
+}
+
+.theory-card:hover {
+  border-color: var(--card-accent, var(--accent-muted));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.theory-card--expanded {
+  border-color: var(--accent);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.theory-card__header {
+  padding: var(--card-padding);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+.theory-card[data-region="western"] { --card-accent: #3498db; --card-accent-strong: #2c3e50; }
+.theory-card[data-region="eastern"] { --card-accent: #7cb342; --card-accent-strong: #5d4037; }
+.theory-card[data-region="african"] { --card-accent: #ff9800; --card-accent-strong: #1b5e20; }
+.theory-card[data-region="latin"] { --card-accent: #b71c1c; --card-accent-strong: #c62828; }
+.theory-card[data-region="indigenous"] { --card-accent: #00897b; --card-accent-strong: #004d40; }
+
+.theory-card__region {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.5rem;
+}
+
+.theory-card__name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 0.35em 0;
+  color: var(--text-strong);
+}
+
+.theory-card__person {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 0.6em 0;
+}
+
+.theory-card__person-label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.theory-card__era {
+  opacity: 0.85;
+}
+
+.theory-card__summary {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 0.75rem 0;
+}
+
+.theory-card__toggle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: none;
+  border: none;
+  padding: 0.25rem 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.theory-card__toggle:hover {
+  color: var(--card-accent-strong, var(--accent-strong));
+}
+
+.theory-card__read-more {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--card-accent, var(--accent));
+  margin-top: 0.5rem;
+}
+
+.theory-card--link .theory-card__header {
+  cursor: pointer;
+}
+
+.theory-card--link:hover .theory-card__read-more {
+  text-decoration: underline;
+}
+
+.theory-card__body {
+  padding: 0 var(--card-padding) var(--card-padding);
+  border-top: 1px solid var(--border);
+  animation: theory-card-open 0.25s ease;
+}
+
+@keyframes theory-card-open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.theory-card__points {
+  margin-bottom: 1.25rem;
+}
+
+.theory-card__books {
+  margin-bottom: 1.25rem;
+}
+
+.theory-card__books-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.theory-card__books-list li {
+  margin-bottom: 0.5rem;
+}
+
+.theory-card__book-link {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15em;
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 0.35rem 0;
+  transition: color 0.15s ease;
+}
+
+.theory-card__book-link:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.theory-card__book-title {
+  font-weight: 600;
+}
+
+.theory-card__book-author {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.theory-card__book-arrow {
+  font-size: 0.8em;
+  color: var(--text-muted);
+}
+
+.theory-card__points h4,
+.theory-card__books h4,
+.theory-card__related h4 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem 0;
+}
+
+.theory-card__points ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.theory-card__points li {
+  margin-bottom: 0.35rem;
+}
+
+.theory-card__related-intro {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem 0;
+}
+
+.theory-card__related-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.theory-card__related-chip {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent-muted);
+  background: var(--bg);
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  text-align: left;
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.theory-card__related-chip:hover {
+  background: var(--accent-muted);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.theory-card__detail-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--card-accent, var(--accent));
+  text-decoration: none;
+}
+
+.theory-card__detail-link:hover {
+  text-decoration: underline;
+}
+
+.theory-card--compact .theory-card__name {
+  font-size: 1rem;
+}
+
+.theory-card--compact .theory-card__summary {
+  display: none;
+}
+
+.theory-card--compact .theory-card__toggle {
+  display: none;
+}
+
+.theory-card--compact .theory-card__header {
+  cursor: default;
+}
+
+.theory-card--compact.theory-card--expanded .theory-card__summary,
+.theory-card--compact.theory-card--expanded .theory-card__toggle {
+  display: block;
+}
+
+.theory-card--compact.theory-card--expanded .theory-card__header {
+  cursor: pointer;
+}
