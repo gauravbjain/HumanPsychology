@@ -1,4 +1,4 @@
-// Origin locations for each theory: [longitude, latitude] (for react-simple-maps) and place label.
+// Origin locations for each theory: [longitude, latitude] and place label (used for equirectangular map).
 // Where the idea or its main figure originated / was active.
 
 export const MAP_ORIGINS = {
