@@ -66,6 +66,13 @@ export function HomePage() {
             >
               Practical tools
             </button>
+            <button
+              type="button"
+              className="app-nav__btn"
+              onClick={() => navigate('/apply')}
+            >
+              Apply to Your Life
+            </button>
           </nav>
         </div>
       </header>

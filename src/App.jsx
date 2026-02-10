@@ -4,6 +4,7 @@ import { TheoryDetailPage } from './pages/TheoryDetailPage';
 import { TimelineView } from './pages/TimelineView';
 import { ExperimentsPage } from './pages/ExperimentsPage';
 import { PracticalToolsPage } from './pages/PracticalToolsPage';
+import { ApplyPage } from './pages/ApplyPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/timeline" element={<TimelineView />} />
       <Route path="/experiments" element={<ExperimentsPage />} />
       <Route path="/tools" element={<PracticalToolsPage />} />
+      <Route path="/apply" element={<ApplyPage />} />
     </Routes>
   );
 }
