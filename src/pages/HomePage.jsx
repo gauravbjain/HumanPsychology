@@ -87,6 +87,13 @@ export function HomePage() {
             >
               Compare
             </button>
+            <button
+              type="button"
+              className="app-nav__btn"
+              onClick={() => navigate('/whoami')}
+            >
+              Who Am I?
+            </button>
           </nav>
         </div>
       </header>

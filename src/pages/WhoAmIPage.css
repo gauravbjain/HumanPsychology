@@ -1,0 +1,387 @@
+.whoami-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ── Header ── */
+.whoami-page__header {
+  position: relative;
+  padding: 2rem 1.5rem 2.5rem;
+  overflow: hidden;
+}
+
+.whoami-page__header-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #5d4037 0%, #7cb342 40%, #3498db 100%);
+  opacity: 0.07;
+}
+
+.whoami-page__header-inner {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.whoami-page__back {
+  color: var(--accent);
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+.whoami-page__back:hover {
+  text-decoration: underline;
+}
+
+.whoami-page__title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--text-strong);
+  margin: 0 0 0.5rem;
+}
+
+.whoami-page__subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Main ── */
+.whoami-page__main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ════════════════════════════════════
+   Welcome Phase
+   ════════════════════════════════════ */
+
+.whoami-page__welcome {
+  padding-top: 1rem;
+}
+
+.whoami-page__welcome-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.whoami-page__welcome-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--text-strong);
+  margin: 0 0 0.75rem;
+}
+
+.whoami-page__welcome-text {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+}
+
+.whoami-page__welcome-dims {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.whoami-page__welcome-dim {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.whoami-page__welcome-dim-icon {
+  font-size: 0.95rem;
+}
+
+.whoami-page__welcome-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+}
+
+.whoami-page__start-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--surface);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.whoami-page__start-btn:hover {
+  background: var(--accent-strong);
+}
+
+/* ════════════════════════════════════
+   Quiz Phase
+   ════════════════════════════════════ */
+
+.whoami-page__quiz {
+  padding-top: 1rem;
+}
+
+/* Progress */
+.whoami-page__progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.whoami-page__progress-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.whoami-page__progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.35s ease;
+}
+
+.whoami-page__progress-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Question card */
+.whoami-page__question {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem 1.75rem;
+  margin-bottom: 1rem;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.whoami-page__question--exit {
+  opacity: 0.4;
+  transform: translateX(8px);
+}
+
+.whoami-page__dim-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: rgba(92, 77, 60, 0.08);
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.85rem;
+}
+
+.whoami-page__scenario {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--text-strong);
+  margin: 0 0 1.25rem;
+  line-height: 1.4;
+}
+
+/* Options */
+.whoami-page__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.whoami-page__option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+}
+
+.whoami-page__option:hover {
+  border-color: var(--accent-muted);
+  background: var(--bg);
+}
+
+.whoami-page__option:active {
+  transform: scale(0.99);
+}
+
+.whoami-page__option--selected {
+  border-color: var(--accent);
+  background: rgba(92, 77, 60, 0.06);
+}
+
+.whoami-page__option-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.whoami-page__option--selected .whoami-page__option-letter {
+  background: var(--accent);
+  color: var(--surface);
+  border-color: var(--accent);
+}
+
+.whoami-page__option-text {
+  flex: 1;
+}
+
+/* Navigation */
+.whoami-page__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.whoami-page__nav-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.whoami-page__nav-btn:hover:not(:disabled) {
+  border-color: var(--accent-muted);
+  background: var(--bg);
+}
+.whoami-page__nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.whoami-page__nav-btn--finish {
+  background: var(--accent);
+  color: var(--surface);
+  border-color: var(--accent);
+}
+.whoami-page__nav-btn--finish:hover:not(:disabled) {
+  background: var(--accent-strong);
+}
+
+.whoami-page__nav-qnum {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ════════════════════════════════════
+   Results Phase
+   ════════════════════════════════════ */
+
+.whoami-page__results {
+  padding-top: 1rem;
+}
+
+/* ════════════════════════════════════
+   Responsive
+   ════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .whoami-page__header {
+    padding: 1.25rem 1rem 1.5rem;
+  }
+
+  .whoami-page__title {
+    font-size: 1.5rem;
+  }
+
+  .whoami-page__subtitle {
+    font-size: 0.9rem;
+  }
+
+  .whoami-page__main {
+    padding: 0 1rem 3rem;
+  }
+
+  .whoami-page__welcome-card {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .whoami-page__welcome-title {
+    font-size: 1.3rem;
+  }
+
+  .whoami-page__welcome-text {
+    font-size: 0.92rem;
+  }
+
+  .whoami-page__welcome-dims {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .whoami-page__question {
+    padding: 1.25rem 1rem;
+  }
+
+  .whoami-page__scenario {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .whoami-page__option {
+    padding: 0.7rem 0.85rem;
+    font-size: 0.88rem;
+  }
+
+  .whoami-page__option-letter {
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+  }
+
+  .whoami-page__nav-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.82rem;
+  }
+}
